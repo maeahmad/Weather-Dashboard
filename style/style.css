@@ -1,0 +1,48 @@
+.title {
+    color: white;
+    font-size: large;
+    text-align: center;
+    background-image: linear-gradient(to right, purple, blue);
+}
+
+.form-group {
+    font-size: 1.2rem;
+}
+
+
+.currentWeather {
+    border: 1px solid black;
+    margin-bottom: 10px;
+
+}
+
+.card-body {
+    background-color: #1b2b3d;
+}
+
+section.fiveDay h2 {
+    font-size: 1.5rem;
+}
+
+section.fiveDay p {
+    font-size: 1rem;
+    color: white;
+}
+
+section.fiveDay p.card-subtitle {
+    color: white;
+
+}
+
+.text-muted {
+    color: white !important;
+}
+
+.recent-searches {
+    border-top: 1px solid gray;
+}
+
+.btn-secondary {
+    display: block;
+    margin: 5px;
+}
