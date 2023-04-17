@@ -70,3 +70,8 @@ section.fiveDay p.card-subtitle {
 .fiveDay-humid5 {
     display: inline-block;
 }
+
+#cityList {
+    display: flex;
+    flex-direction: column;
+}
