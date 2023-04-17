@@ -3,11 +3,13 @@ var searchButtonEl = document.querySelector("#search-btn")
 
 // var dataEl = document.querySelector("#date")
 
+var searchValue = cityInputEl.value
 var weatherIconEl = document.querySelector("#weather-icon")
 var temperatureEl = document.querySelector("#temperature")
 var windSpeedEl = document.querySelector("#wind")
 var humidityEl = document.querySelector("#humidity")
 
+var pastCities = [searchValue];
 
 document.getElementById("date").textContent = dayjs().format("(M/D/YYYY)") //Why not all the card title date?? //
 
@@ -17,8 +19,42 @@ searchButtonEl.addEventListener("click", function () {
 
     getWeatherInfo(searchValue)
     getForecast(searchValue)
+
+
 })
 
+
+$(function (storedCities) {
+    $("#search-btn").on("click", function () {
+        var searchValue = cityInputEl.value
+        localStorage.setItem("City", searchValue)
+    })
+    // $(searchValue).val(localStorage.getItem(".btn1"))
+
+});
+
+function loadCities() {
+    const storedCities = JSON.parse(localStorage.getItem('pastCities'));
+    if (storedCities) {
+        pastCities = storedCities;
+    }
+}
+
+
+
+// Load events from local storage
+function loadCities() {
+    const storedCities = JSON.parse(localStorage.getItem('pastCities'));
+    if (storedCities) {
+        pastCities = storedCities;
+    }
+}
+
+
+// Store searched cities in local storage
+function storeCities() {
+    localStorage.setItem('pastCities', JSON.stringify(pastCities));
+}
 
 
 
@@ -91,3 +127,4 @@ var getForecast = function (searchValue) {
             }
         });
 };
+
